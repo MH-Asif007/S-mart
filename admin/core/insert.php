@@ -4,7 +4,7 @@ include '../inc/functions.php';
 
 // category insert 
 if(isset($_POST['add_category'])){
-    $name = $_POST['cat_name'];
+    $name = $_POST['c_name'];
     $is_parent = $_POST['parent_cat'];
     $file_name = $_FILES['choose-file']['name'];
     $tmp_name = $_FILES['choose-file']['tmp_name'];
@@ -30,7 +30,7 @@ if(isset($_POST['add_category'])){
             echo 'warning ! please upload an image file (png,jpg,jpeg)!';
         }
     }else{
-        $cat_insert = "INSERT INTO category (c_name,iparent_cat,c_status) VALUES ('$name','$is_parent','1')";
+        $cat_insert = "INSERT INTO category (c_name,parent_cat,c_status) VALUES ('$name','$is_parent','1')";
             $cat_insert_res = mysqli_query($db, $cat_insert);
             if($cat_insert_res){
                 header('location: ../category.php');
