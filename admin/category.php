@@ -30,7 +30,7 @@
                     $category_res = mysqli_query($db,$category_sql);
                     while($row = mysqli_fetch_assoc($category_res)){
                         $ecat_name   = $row['c_name'];
-                        $ecat_image = $row['c_image'];
+                        $ecat_image = $row['c_img'];
                         $ecat_parent = $row['parent_cat'];
                         $ecat_status = $row['c_status'];
                     }

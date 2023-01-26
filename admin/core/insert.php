@@ -19,7 +19,7 @@ if(isset($_POST['add_category'])){
         if(in_array($extn,$extensions) === true){
             $update_name = rand().$file_name;
             move_uploaded_file($tmp_name, '../assets/img/products/category/'.$update_name);
-            $cat_insert = "INSERT INTO category (c_name,c_image,parent_cat,c_status) VALUES ('$name','$update_name','$is_parent','1')";
+            $cat_insert = "INSERT INTO category (c_name,c_img,parent_cat,c_status) VALUES ('$name','$update_name','$is_parent','1')";
             $cat_insert_res = mysqli_query($db, $cat_insert);
             if($cat_insert_res){
                 header('location: ../category.php');

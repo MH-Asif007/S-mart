@@ -4,7 +4,7 @@
 
     // update category
     if(isset($_POST['update_category'])){
-        $name = $_POST['cat_name'];
+        $name = $_POST['c_name'];
         $parentid = $_POST['parent_cat'];
         $status = $_POST['cat_status'];
         $editid = $_POST['editid'];
@@ -20,7 +20,7 @@
             if(in_array($extn,$extensions) === true){
                 $update_name = rand().$file_name;
                 move_uploaded_file($tmp_name, '../assets/img/products/category/'.$update_name);
-                $cat_update_sql = "UPDATE category SET c_name='$name', c_image='$update_name', parent_cat='$parentid', c_status='$status' WHERE ID='$editid'";
+                $cat_update_sql = "UPDATE category SET c_name='$name', c_img='$update_name', parent_cat='$parentid', c_status='$status' WHERE ID='$editid'";
                 $cat_insert_res = mysqli_query($db, $cat_update_sql);
                 if($cat_insert_res){
                     header('location: ../category.php');
